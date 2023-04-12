@@ -1,7 +1,7 @@
 {
     "display": {
         "title": "23w13a_or_b_moon_mode",
-        "description": "Enables moon mode",
+        "description": "Enable moon mode",
         "icon": {
             "item": "minecraft:oxidized_copper"
         },
