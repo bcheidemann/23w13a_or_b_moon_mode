@@ -1,3 +1,9 @@
+# Kill all entities other than players in the overworld
+gamerule doMobLoot false
+execute as @e[type=!minecraft:player] run execute if dimension minecraft:overworld run kill @s
+execute as @e[type=!minecraft:player] run execute if dimension minecraft:overworld run kill @s
+gamerule doMobLoot true
+
 # Cusomise gameplay
 vote rule minecraft:air_blocks approve
 vote rule minecraft:big_head_mode approve
