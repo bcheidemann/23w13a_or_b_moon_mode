@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+        type: string
+      commit:
+        description: 'Full commit hash'
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          make build
+
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: 23w13a_or_b_moon_mode.zip
+          commit: ${{ inputs.commit }}
+          generateReleaseNotes: true
+          tag: ${{ inputs.version }}
